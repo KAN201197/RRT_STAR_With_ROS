@@ -1,0 +1,5 @@
+map_topic: '/map'
+path_topic: '/path'
+max_iterations: 500000  # Maximum number of iterations for RRT
+step_size: 10.0         # Step size for extending the tree in RRT
+goal_bias: 0.5         # Probability of selecting the goal as a random point in RRT

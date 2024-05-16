@@ -1,0 +1,10 @@
+<launch>
+    <arg name="rviz_config" default="$(find rrt_star_planner)/cfg/rrt_planner.rviz"/>
+    <arg name="map_file" default="$(find rrt_star_planner)/cfg/map.yaml"/>
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(arg rviz_config)"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
+    <node type="rrt_star_planner_node" name="rrt_star_planner" pkg="rrt_star_planner" output="screen">
+    	<rosparam command="load" file="$(find rrt_star_planner)/cfg/config.yaml"/>
+    </node>
+</launch>
